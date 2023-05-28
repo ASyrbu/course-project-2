@@ -88,30 +88,13 @@ gotoSlide(n) {
     if (e.code === this.CODE_ARROW_LEFT) this.previoushandler();
     },
     
-     swipeStart(e){
-        this.startPosX = e instanceof MouseEvent 
-    ? e.pageX 
-    : e.changedTouches[0].pageX;
-    },
-    
-     swipeEnd(e){
-        this.endPosX = e instanceof MouseEvent 
-    ? e.pageX 
-    : e.changedTouches[0].pageX;
-    
-       if(this.endPosX - this.startPosX > 100)this.previoushandler();
-       if(this.endPosX - this.startPosX < -100)this.nexthandler();
-    },
+
     
      initListeners(){
         this.pauseButton.addEventListener('click',this.pauseplayhandler.bind(this));
         this.nextButton.addEventListener('click',this.nexthandler.bind(this));
         this.previousButton.addEventListener('click',this.previoushandler.bind(this));
         this.indicatorContainer.addEventListener('click',this.indicate.bind(this));
-        this.container.addEventListener('touchstart', this.swipeStart.bind(this));
-        this.container.addEventListener('mousedown', this.swipeStart.bind(this));
-        this.container.addEventListener('mouseup', this.swipeEnd.bind(this));
-        this.container.addEventListener('touchend', this.swipeEnd.bind(this));
         document.addEventListener('keydown',this.pressKey.bind(this));
     },
     
@@ -123,6 +106,3 @@ gotoSlide(n) {
 
 Carousel.prototype.constructor = Carousel;
 
-const carousel = new Carousel();
-
-carousel.init();
