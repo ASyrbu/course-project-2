@@ -6,8 +6,8 @@ function SwipeCarousel(){
  SwipeCarousel.prototype = Object.create(Carousel.prototype);
  SwipeCarousel.prototype.constructor = SwipeCarousel;
 
- SwipeCarousel.prototype.initListeners = function(){
-    Carousel.prototype.initListeners.apply(this);
+ SwipeCarousel.prototype._initListeners = function(){
+    Carousel.prototype._initListeners.apply(this);
     this.slidesContainer.addEventListener('touchstart',this.swipeStart.bind(this));
     this.slidesContainer.addEventListener('mousedown',this.swipeStart.bind(this));
     this.slidesContainer.addEventListener('touchend',this.swipeEnd.bind(this));
