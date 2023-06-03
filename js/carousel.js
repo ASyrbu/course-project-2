@@ -1,6 +1,6 @@
-function Carousel(){
-    this.container = document.querySelector('#carousel');
-    this.slides = this.container.querySelectorAll('.slide');
+function Carousel(containerID = '#carousel',slideID = '.slide',interval = 5000){
+    this.container = document.querySelector(containerID);
+    this.slides = this.container.querySelectorAll(slideID);
 
 
     
@@ -15,7 +15,7 @@ this.FA_NEXT = '<i class="fa-solid fa-caret-right"></i>';
     
 this.currentSlide = 0; 
 this.isPlaying = true;
-this.interval = 2000;
+this.interval = interval;
 }
 
 Carousel.prototype={
