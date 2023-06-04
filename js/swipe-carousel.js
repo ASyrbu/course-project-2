@@ -24,8 +24,8 @@ swipeEnd(e){
      ? e.pageX 
      : e.changedTouches[0].pageX;
      
-        if(this.endPosX - this.startPosX > 100)this.previoushandler();
-        if(this.endPosX - this.startPosX < -100)this.nexthandler();
+        if(this.endPosX - this.startPosX > 100)this.prev();
+        if(this.endPosX - this.startPosX < -100)this.next();
      }
 }
  
