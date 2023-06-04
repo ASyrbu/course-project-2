@@ -1,6 +1,7 @@
 
 class Carousel {
     constructor(containerID = '#carousel',slideID = '.slide',interval = 5000,isPlaying = false){
+
     this.container = document.querySelector(containerID);
     this.slideItems = this.container.querySelectorAll(slideID);
 
@@ -12,14 +13,12 @@ class Carousel {
     this.FA_PLAY = '<i class="fas fa-play-circle"></i>';
     this.FA_PREV = '<i class="fa-solid fa-caret-left"></i>';
     this.FA_NEXT = '<i class="fa-solid fa-caret-right"></i>';
-    
+        
     this.currentSlide = 0; 
     this.isPlaying = true;
     this.interval = interval;
+
     }
-
-
-
     _initControls(){
         const controls = document.createElement('div');
 
