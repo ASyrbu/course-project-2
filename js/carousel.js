@@ -63,6 +63,8 @@ this.container.append(indicators);
         this.nextButton.addEventListener('click',this.nexthandler.bind(this));
         this.previousButton.addEventListener('click',this.previoushandler.bind(this));
         this.indicatorContainer.addEventListener('click',this._indicate.bind(this));
+        this.container.addEventListener('mouseenter',this._pauseHandler.bind(this));
+        this.container.addEventListener('mouseleave',this._playHandler.bind(this));
         document.addEventListener('keydown',this._pressKey.bind(this));
     }
 
@@ -95,9 +97,12 @@ _gotoSlide(n) {
     }
     
      _playHandler(){
-        this._tick();
-        this.pauseButton.innerHTML= this.FA_PAUSE;
-        this.isPlaying = true;
+        if(!this.isPlaying){
+            this._tick();
+            this.pauseButton.innerHTML= this.FA_PAUSE;
+            this.isPlaying = true;
+        }
+
     }
     
      _pausePlayHandler() {
