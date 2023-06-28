@@ -74,8 +74,8 @@ class Carousel {
     this.pauseBtn.addEventListener('click', this.pausePlay.bind(this));
     this.prevBtn.addEventListener('click', this.prev.bind(this));
     this.nextBtn.addEventListener('click', this.next.bind(this));
-    this.indContainer.addEventListener('click', this._indicate.bind(this));
-    this.indContainer.addEventListener('mouseenter', this._pause.bind(this));
+    this.container.addEventListener('click', this._indicate.bind(this));
+    this.container.addEventListener('mouseenter', this._pause.bind(this));
     this.container.addEventListener('mouseleave', this._play.bind(this));
     document.addEventListener('keydown', this._pressKey.bind(this));
   }
