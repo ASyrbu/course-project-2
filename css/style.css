@@ -220,11 +220,10 @@ body {
 .pause-play {
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   color: transparent;
   -webkit-transition: 3s;
   transition: 3s;
-  font-size: 15em;
+  font-size: 15rem;
 }
 .title-invisible {
   display: none;
